@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Main page
+{% endblock %}
+
+{% block main %}
+
+ <div class="container p-3 my-3 border">
+  <h4> Generate synthetic data </h4>
+  <form action="/" method="post">
+    <table class="table table-sm ml-3 table-borderless">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for field in inputs %}
+        <tr>
+            <td style="text-align: left">{{ titles[field] }}</td>
+            
+            <td>
+              <div class="form-group" style="text-align: left">
+                  <input class="form-control" autofocus style="width: 400px;" name= {{ field }}>
+              </div>
+            </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+      <div class="form-group">
+          <button class="btn btn-primary">Generate</button>
+      </div>
+  </form>
+ </div>
+
+
+{% endblock %}
+
